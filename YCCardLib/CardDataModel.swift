@@ -9,8 +9,8 @@
 import Foundation
 
 class CardDataModel {
-    var cardFilter:((CardProtocol)->Bool)?
-    var cardSortFunction: ((CardProtocol, CardProtocol)->Bool)?
+    var cardFilter:((Card)->Bool)?
+    var cardSortFunction: ((Card, Card)->Bool)?
 
     func performStartupTasks(callback:()->Void) {
     }
@@ -22,11 +22,11 @@ class CardDataModel {
         return 0
     }
     
-    func elementAt(index: Int) -> CardProtocol? {
+    func elementAt(index: Int) -> Card? {
         return nil
     }
     
-    func updateCard(card: CardProtocol, atIndex: Int) -> Void {
+    func updateCard(card: Card, atIndex: Int) -> Void {
         
     }
     

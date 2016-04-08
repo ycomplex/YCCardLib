@@ -106,10 +106,9 @@ class AbstractCardViewController: UIViewController, DraggableCardStackDataSource
         return createViewForCard(card)
     }
     
-    func createViewForCard(card: CardProtocol?) -> UIView {
+    func createViewForCard(card: Card?) -> UIView {
         if card?.type == "example" {
             let rCardView = ExampleCardView(frame: CGRectMake(0,0,1,1))
-            rCardView.imageName = card!.category
             rCardView.label.text = card!.content
             return rCardView
         } else {
