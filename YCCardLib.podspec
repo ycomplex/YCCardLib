@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
 
   s.name         = "YCCardLib"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "YComplex Card Library."
 
   s.description  = <<-DESC
-                    Cards Library
+                    YComplex Card Library for developing swipe-card based applications.
                    DESC
 
   s.homepage     = "http://github.com/ycomplex/YCCardLib"
