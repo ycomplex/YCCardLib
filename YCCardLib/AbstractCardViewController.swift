@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AbstractCardViewController: UIViewController, DraggableCardStackDataSource, DraggableCardStackDelegate {
+public class AbstractCardViewController: UIViewController, DraggableCardStackDataSource, DraggableCardStackDelegate {
     
     let CARD_HEIGHT: CGFloat = 400
     let CARD_WIDTH: CGFloat = 290
@@ -26,7 +26,7 @@ class AbstractCardViewController: UIViewController, DraggableCardStackDataSource
     
     var centreButton: UIButton?, leftButton:UIButton?, menuButton: UIButton?
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         if !UIAccessibilityIsReduceTransparencyEnabled() {
@@ -66,14 +66,14 @@ class AbstractCardViewController: UIViewController, DraggableCardStackDataSource
 //        self.dataModel = app.dataModel
 //    }
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK: - DraggableCardStackDataSource methods
     
-    func cardCountForDraggableCardStack(_:DraggableCardStackView) -> Int
+    public func cardCountForDraggableCardStack(_:DraggableCardStackView) -> Int
     {
         if (taskZero) {
             return 1
@@ -82,22 +82,22 @@ class AbstractCardViewController: UIViewController, DraggableCardStackDataSource
         // return exampleCardLabels.count
     }
     
-    func stackSizeForDraggableCardStack(_:DraggableCardStackView) -> Int
+    public func stackSizeForDraggableCardStack(_:DraggableCardStackView) -> Int
     {
         return MAX_STACK_SIZE
     }
     
-    func cardHeightForDraggableCardStack(_:DraggableCardStackView) -> CGFloat
+    public func cardHeightForDraggableCardStack(_:DraggableCardStackView) -> CGFloat
     {
         return CARD_HEIGHT
     }
     
-    func cardWidthForDraggableCardStack(_:DraggableCardStackView) -> CGFloat
+    public func cardWidthForDraggableCardStack(_:DraggableCardStackView) -> CGFloat
     {
         return CARD_WIDTH
     }
     
-    func draggableCardStack(_:DraggableCardStackView, viewForCardAtIndex index: Int) -> UIView
+    public func draggableCardStack(_:DraggableCardStackView, viewForCardAtIndex index: Int) -> UIView
     {
         if (taskZero) {
             return buildTaskZeroView()
@@ -121,16 +121,16 @@ class AbstractCardViewController: UIViewController, DraggableCardStackDataSource
         return CardZeroCardView(frame: CGRectMake(0,0,1,1))
     }
     
-    func draggableCardStack(_:DraggableCardStackView, overlayViewForCardAtIndex: Int) -> UIView {
+    public func draggableCardStack(_:DraggableCardStackView, overlayViewForCardAtIndex: Int) -> UIView {
         return OverlayView(frame: CGRectMake(0,0,100,100), leftMessage: nil, rightMessage: nil)
     }
     
     // MARK: - DraggableCardStackDelegate methods
-    func draggableCardStack(stackView:DraggableCardStackView, displayingCard: UIView, atIndex index: Int) -> Void
+    public func draggableCardStack(stackView:DraggableCardStackView, displayingCard: UIView, atIndex index: Int) -> Void
     {
     }
     
-    func draggableCardStack(_:DraggableCardStackView, swipedCard: UIView, atIndex index: Int, to: CardSwipeMode) -> Void
+    public func draggableCardStack(_:DraggableCardStackView, swipedCard: UIView, atIndex index: Int, to: CardSwipeMode) -> Void
     {
         NSLog("Card at index %d swiped", index)
         if !taskZero {
@@ -215,9 +215,9 @@ class AbstractCardViewController: UIViewController, DraggableCardStackDataSource
     
     // MARK: - Navigation methods
     func dismissChildController() {
-        self.dismissViewControllerAnimated(true) {
-            NSLog("Dismissed child controller")
-        }
+//        self.dismissViewControllerAnimated(true) {
+//            NSLog("Dismissed child controller")
+//        }
         self.dataModel.cardFilter = nil
         self.refreshDataModel()
         self.stackView.reloadCards()
@@ -228,9 +228,9 @@ class AbstractCardViewController: UIViewController, DraggableCardStackDataSource
             parent.dismissChildController()
         } else {
             self.dataModel.cardFilter = nil
-            self.dismissViewControllerAnimated(true) {
-                NSLog("Dismissed View Controller")
-            }
+//            self.dismissViewControllerAnimated(true) {
+//                NSLog("Dismissed View Controller")
+//            }
         }
     }
     

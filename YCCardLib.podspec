@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YCCardLib"
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   s.summary      = "YComplex Card Library."
 
   s.description  = <<-DESC
