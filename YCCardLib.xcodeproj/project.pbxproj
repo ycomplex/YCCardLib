@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA9765351CB811AB0030C893 /* YCCardLib.h in Headers */ = {isa = PBXBuildFile; fileRef = BA9765341CB811AB0030C893 /* YCCardLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA97653E1CB811CF0030C893 /* AbstractCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA97653D1CB811CF0030C893 /* AbstractCardViewController.swift */; };
 		BA97654E1CB811E00030C893 /* CardZeroCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9765401CB811E00030C893 /* CardZeroCardView.swift */; };
 		BA97654F1CB811E00030C893 /* CardZeroCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA9765411CB811E00030C893 /* CardZeroCardView.xib */; };
@@ -29,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		BA9765311CB811AB0030C893 /* YCCardLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YCCardLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA9765341CB811AB0030C893 /* YCCardLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YCCardLib.h; sourceTree = "<group>"; };
 		BA9765361CB811AB0030C893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA97653D1CB811CF0030C893 /* AbstractCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractCardViewController.swift; sourceTree = "<group>"; };
 		BA9765401CB811E00030C893 /* CardZeroCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardZeroCardView.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 				BA97655C1CB811E40030C893 /* Model */,
 				BA97653F1CB811D40030C893 /* View */,
 				BA97653C1CB811C90030C893 /* Controller */,
-				BA9765341CB811AB0030C893 /* YCCardLib.h */,
 				BA9765361CB811AB0030C893 /* Info.plist */,
 			);
 			path = YCCardLib;
@@ -134,7 +131,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA9765351CB811AB0030C893 /* YCCardLib.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
