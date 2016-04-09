@@ -9,14 +9,14 @@
 
 import UIKit
 
-class CustomCardView: UIView {
+public class CustomCardView: UIView {
     
     // Our custom view from the XIB file
     var view: UIView!
     var focusStateUnfocused: Bool = true
     
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         // 1. setup any properties here
         
         // 2. call super.init(frame:)
@@ -27,7 +27,7 @@ class CustomCardView: UIView {
         initProperties()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         // 1. setup any properties here
         
         // 2. call super.init(coder:)

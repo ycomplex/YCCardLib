@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DraggableCardStackView: UIView, DraggableViewDelegate {
+public class DraggableCardStackView: UIView, DraggableViewDelegate {
     var cardHeight:CGFloat!, cardWidth:CGFloat!, stackSize:Int!
     
     var currentCardIndex:Int = 0
@@ -34,22 +34,22 @@ class DraggableCardStackView: UIView, DraggableViewDelegate {
     
     var delegate: DraggableCardStackDelegate?
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         super.layoutSubviews()
     }
     
-    func cardSwipedLeft(oldCard: UIView) -> Void {
+    public func cardSwipedLeft(oldCard: UIView) -> Void {
         let swipedCard = currentCardIndex
         _cardSwiped(oldCard);
         delegate?.draggableCardStack(self, swipedCard: oldCard, atIndex: swipedCard, to: .CardSwipeModeLeft)
     }
     
-    func cardSwipedRight(oldCard: UIView) -> Void {
+    public func cardSwipedRight(oldCard: UIView) -> Void {
         let swipedCard = currentCardIndex
         _cardSwiped(oldCard);
         delegate?.draggableCardStack(self, swipedCard: oldCard, atIndex: swipedCard, to: .CardSwipeModeRight)

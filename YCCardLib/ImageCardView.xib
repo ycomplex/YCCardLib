@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageView" customModule="Tasks" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageView" customModule="YCCardLib" customModuleProvider="target">
             <connections>
                 <outlet property="image" destination="yUu-9a-EUI" id="wpo-no-arj"/>
             </connections>

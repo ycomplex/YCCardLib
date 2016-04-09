@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol DraggableCardStackDataSource {
+public protocol DraggableCardStackDataSource {
     func cardCountForDraggableCardStack(_:DraggableCardStackView) -> Int
     func stackSizeForDraggableCardStack(_:DraggableCardStackView) -> Int
     func cardHeightForDraggableCardStack(_:DraggableCardStackView) -> CGFloat

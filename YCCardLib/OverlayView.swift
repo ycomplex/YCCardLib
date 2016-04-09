@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-enum SBOverlayViewMode {
+public enum SBOverlayViewMode {
     case SBOverlayViewModeLeft
     case SBOverlayViewModeRight
 }
 
-class OverlayView: UIView{
+public class OverlayView: UIView{
     var _mode: SBOverlayViewMode! = SBOverlayViewMode.SBOverlayViewModeLeft
     // var imageView: UIImageView!
     var iconLabel: UILabel!, messageLabel: UILabel!
@@ -22,11 +22,11 @@ class OverlayView: UIView{
     var leftMessage: String?
     var rightMessage: String?
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    init(frame: CGRect,
+    public init(frame: CGRect,
          leftMessage: String?,
          rightMessage: String?) {
         self.leftMessage = leftMessage

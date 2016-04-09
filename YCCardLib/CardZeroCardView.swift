@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardZeroCardView: CustomCardView {
+public class CardZeroCardView: CustomCardView {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageTextView: UITextView!

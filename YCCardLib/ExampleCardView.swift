@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExampleCardView: CustomCardView {
+public class ExampleCardView: CustomCardView {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var label: UILabel!
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CardDataModel {
+public class CardDataModel {
     var cardFilter:((Card)->Bool)?
     var cardSortFunction: ((Card, Card)->Bool)?
 

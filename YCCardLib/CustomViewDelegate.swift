@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CustomCardViewDelegate {
+public protocol CustomCardViewDelegate {
     func focus(_:CustomCardView) -> Void
     func unfocus(_:CustomCardView) -> Void
 }

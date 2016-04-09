@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class ImageCardView: CustomCardView {
+public class ImageCardView: CustomCardView {
     @IBOutlet weak var image: UIImageView!
     
     var imageName:String? {

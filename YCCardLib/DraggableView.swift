@@ -16,12 +16,12 @@ let ROTATION_MAX: Float = 1         //%%% the maximum rotation allowed in radian
 let ROTATION_STRENGTH: Float = 320  //%%% strength of rotation. Higher = weaker rotation
 let ROTATION_ANGLE: Float = 3.14/8  //%%% Higher = stronger rotation angle
 
-protocol DraggableViewDelegate {
+public protocol DraggableViewDelegate {
     func cardSwipedLeft(card: UIView) -> Void
     func cardSwipedRight(card: UIView) -> Void
 }
 
-class DraggableView: UIView {
+public class DraggableView: UIView {
     var delegate: DraggableViewDelegate!
     var panGestureRecognizer: UIPanGestureRecognizer!
     var originPoint: CGPoint!
@@ -30,13 +30,13 @@ class DraggableView: UIView {
     var yFromCenter: Float!
     var cardView: UIView!
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     var dragEnabled:Bool = true
     
-    init(frame: CGRect, view: UIView, overlay: OverlayView?) {
+    public init(frame: CGRect, view: UIView, overlay: OverlayView?) {
         super.init(frame: frame)
         
         self.setupView()

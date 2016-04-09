@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc protocol Card {
+@objc public protocol Card {
     var type: String? {get set}
     var content: String? {get set}
     var created: NSDate? {get set}

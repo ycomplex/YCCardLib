@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-enum CardSwipeMode {
+public enum CardSwipeMode {
     case CardSwipeModeLeft
     case CardSwipeModeRight
 }
 
-protocol DraggableCardStackDelegate {
+public protocol DraggableCardStackDelegate {
     func draggableCardStack(_:DraggableCardStackView, displayingCard: UIView, atIndex: Int) -> Void
     func draggableCardStack(_:DraggableCardStackView, swipedCard: UIView, atIndex: Int, to: CardSwipeMode) -> Void
 }
