@@ -14,17 +14,17 @@ public class AbstractCardViewController: UIViewController, DraggableCardStackDat
     let CARD_WIDTH: CGFloat = 290
     let MAX_STACK_SIZE = 5
     
-    var parent: AbstractCardViewController?
-    var stackView:DraggableCardStackView!
-    var dataModel:CardDataModel! {
+    public var parent: AbstractCardViewController?
+    public var stackView:DraggableCardStackView!
+    public var dataModel:CardDataModel! {
         didSet {
             refreshDataModel()
             self.stackView.dataSource = self
         }
     }
-    var taskZero: Bool = false
+    public var taskZero: Bool = false
     
-    var centreButton: UIButton?, leftButton:UIButton?, menuButton: UIButton?
+    public var centreButton: UIButton?, leftButton:UIButton?, menuButton: UIButton?
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -49,17 +49,16 @@ public class AbstractCardViewController: UIViewController, DraggableCardStackDat
         self.stackView = draggableStackView
         self.view.addSubview(draggableStackView)
         self.setupButtons()
-        self.setupDataModel()
     }
     
-    func setupDataModel() {
+//    func setupDataModel() {
 //        let app = UIApplication.sharedApplication().delegate as! AppDelegate
 //        if (app.dataReady) {
 //            dataModelSet()
 //        } else {
 //            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AbstractCardViewController.dataModelSet), name: AppDelegate.kDataReadyNotification, object: nil)
 //        }
-    }
+//    }
 //
 //    func dataModelSet() {
 //        let app = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -100,13 +99,13 @@ public class AbstractCardViewController: UIViewController, DraggableCardStackDat
     public func draggableCardStack(_:DraggableCardStackView, viewForCardAtIndex index: Int) -> UIView
     {
         if (taskZero) {
-            return buildTaskZeroView()
+            return buildCardZeroView()
         }
         let card = dataModel.elementAt(index)
         return createViewForCard(card)
     }
     
-    func createViewForCard(card: Card?) -> UIView {
+    public func createViewForCard(card: Card?) -> UIView {
         if card?.type == "example" {
             let rCardView = ExampleCardView(frame: CGRectMake(0,0,1,1))
             rCardView.label.text = card!.content
@@ -117,7 +116,7 @@ public class AbstractCardViewController: UIViewController, DraggableCardStackDat
         
     }
     
-    func buildTaskZeroView() -> UIView {
+    public func buildCardZeroView() -> UIView {
         return CardZeroCardView(frame: CGRectMake(0,0,1,1))
     }
     
@@ -148,13 +147,13 @@ public class AbstractCardViewController: UIViewController, DraggableCardStackDat
         }
     }
     
-    func handleSwipeRightOnCard(card: UIView, atIndex index: Int) {
+    public func handleSwipeRightOnCard(card: UIView, atIndex index: Int) {
     }
     
-    func handleSwipeLeftOnCard(card: UIView, atIndex index: Int) {
+    public func handleSwipeLeftOnCard(card: UIView, atIndex index: Int) {
     }
     
-    func refreshDataModel() {
+    public func refreshDataModel() {
         dataModel.refreshItems()
         if (dataModel.numberOfItems() == 0) {
             taskZero = true
@@ -163,7 +162,7 @@ public class AbstractCardViewController: UIViewController, DraggableCardStackDat
         }
     }
     
-    func _dropCurrentCard(index: Int) {
+    public func dropCurrentCard(index: Int) {
         stackView.dropOutCard()
         if (index == (dataModel.numberOfItems() - 1)) {
             //self.stackView.undoSwipe(times: 2)
@@ -172,13 +171,13 @@ public class AbstractCardViewController: UIViewController, DraggableCardStackDat
         }
     }
     
-    func reloadCard()
+    public func reloadCard()
     {
         self.stackView.undoSwipe(times: 1)
     }
     
     // MARK: - Menu methods
-    func setupButtons() -> Void {
+    public func setupButtons() -> Void {
     }
     
 //    func createButtonWithIcon(icon: LineaType, action: Selector, inFrame frame:CGRect) -> UIButton {
@@ -201,20 +200,20 @@ public class AbstractCardViewController: UIViewController, DraggableCardStackDat
 //        return btn
 //    }
     
-    func showActionButtons() -> Void {
+    public func showActionButtons() -> Void {
         self.leftButton?.hidden = false
         self.centreButton?.hidden = false
         self.menuButton?.hidden = false
     }
     
-    func hideActionButtons() -> Void {
+    public func hideActionButtons() -> Void {
         self.leftButton?.hidden = true
         self.centreButton?.hidden = true
         self.menuButton?.hidden = true
     }
     
     // MARK: - Navigation methods
-    func dismissChildController() {
+    public func dismissChildController() {
 //        self.dismissViewControllerAnimated(true) {
 //            NSLog("Dismissed child controller")
 //        }
@@ -223,7 +222,7 @@ public class AbstractCardViewController: UIViewController, DraggableCardStackDat
         self.stackView.reloadCards()
     }
     
-    func backAction() {
+    public func backAction() {
         if let parent = self.parent {
             parent.dismissChildController()
         } else {
